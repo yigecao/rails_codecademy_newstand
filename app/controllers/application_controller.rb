@@ -16,5 +16,9 @@ class ApplicationController < ActionController::Base
     redirect_to '/' if current_user
   end
       
+  def require_author
+    redirect_to '/' unless current_user.author?
+  end
+  
     
 end
